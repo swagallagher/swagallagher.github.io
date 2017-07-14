@@ -7,7 +7,7 @@
     
 
     <title>
-      Hexo+GithubPages搭建个人Blog分享 | 陈佳浩&#39;s DEN 
+      Hexo+GithubPages搭建个人Bolg分享 | 陈佳浩&#39;s DEN 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,14 +16,19 @@
     
     
 
-    <meta name="keywords" content="技术分享#文章標籤 可以省略">
+    <meta name="description" content="分享我搭建个人Bolg时候遇见的问题">
+<meta name="keywords" content="技术分享#文章標籤 可以省略">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GithubPages搭建个人Blog分享 | 陈佳浩&#39;s DEN">
+<meta property="og:title" content="Hexo+GithubPages搭建个人Bolg分享 | 陈佳浩&#39;s DEN">
 <meta property="og:url" content="https://wwww.swagallagher.com/2017/07/14/Hexo-githubPages/index.html">
 <meta property="og:site_name" content="陈佳浩&#39;s DEN">
-<meta property="og:updated_time" content="2017-07-14T06:17:09.000Z">
+<meta property="og:description" content="分享我搭建个人Bolg时候遇见的问题">
+<meta property="og:image" content="https://wwww.swagallagher.com/image.png">
+<meta property="og:updated_time" content="2017-07-14T09:49:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GithubPages搭建个人Blog分享 | 陈佳浩&#39;s DEN">
+<meta name="twitter:title" content="Hexo+GithubPages搭建个人Bolg分享 | 陈佳浩&#39;s DEN">
+<meta name="twitter:description" content="分享我搭建个人Bolg时候遇见的问题">
+<meta name="twitter:image" content="https://wwww.swagallagher.com/image.png">
     
     
     
@@ -147,7 +152,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">Hexo+GithubPages搭建个人Blog分享</h1>
+    <h1 class="post-title">Hexo+GithubPages搭建个人Bolg分享</h1>
 
     
 
@@ -178,7 +183,44 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    
+    <p>简单的说<br>1.Hexo相当于一家装修公司<br>2.GitHubPages相当于一个”免费”房子</p>
+<p>你可以先去选择装修风格，购买家具，入住的时间自己选择。也可以先购买房子，然后再去挑选装修公司。<br>任君选择，下面分四部分讲：</p>
+<p>一、前提:<br>Node.js （我理解为用终端命令就能下载软件的环境）<br>下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
+<p>Git（我理解为房子的开发商物业）<br>下载地址：<a href="https://git-scm.com/download/" target="_blank" rel="external">https://git-scm.com/download/</a></p>
+<p>下载安装后，在终端中检查一下是否安装好了，验证方法就是检查你本机安装这两个环境的版本号<br>node –version<br>npm –version<br>git –version</p>
+<p>二、Hexo篇:<br>1.安装Hexo 先创建一个文件夹，然后cd进去<br>以下全部都是终端命令完成除了最后一步在浏览器中预览</p>
+<p>2.npm install hexo-cli -g</p>
+<p>3.npm install hexo –save</p>
+<p>4.检查版本是否安装成功：hexo –version </p>
+<p>5.hexo init</p>
+<p>6.npm install</p>
+<p>7.hexo g （hexo generate生成，一般是在本地生成了新的文件需要同步的时候）</p>
+<p>8.hexo s （hexo server启动服务预览，每一次浏览本地Bolg的样子需要输入，停止是Ctrl + C）</p>
+<p>9.在浏览器中打开  <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  （浏览本地生成的样子  这个主题是默认的主题）</p>
+<p>三、Github:<br>1.<a href="https://github.com" target="_blank" rel="external">https://github.com</a></p>
+<p>2.创建-登陆</p>
+<p>3.直接右上角➕</p>
+<p>4.New repository</p>
+<p>5.Repository name格式:<br>你自己的用户名.github.io</p>
+<p>下面是终端操作：<br>6.在本地创建一个文件夹来管理github.io   cd到新建文件夹中</p>
+<p>下载你的github.io：<br>clone <a href="https://github.com/你自己的用户名/你自己的用户名.github.io" target="_blank" rel="external">https://github.com/你自己的用户名/你自己的用户名.github.io</a></p>
+<p>四、把本地Hexo同步到Github:</p>
+<p>1.敲黑板：你会碰见两个_config.yml<br>第1个应该会在你创建hexo文件夹中 这个主要负责博客主题的名字 描述 页数 我感觉就像硬件设施吧</p>
+<p>第2个在hexo里面的themes的默认主题landscape文件夹中    如果你需要更改主题的 菜单名字  菜单的地址指向本地的哪个文件夹</p>
+<p>关联hexo和githubpages  需要在第一个硬件设施的_config.yml，可以用记事本打开，但是如果windows电脑保存的时候记得选择格式UTF-8，因为中文会乱码。<br>找到：<br>deploy:<br>type: git<br>repo: git@github.com:你的用户名/你的用户名.github.io.git<br>branch: master<br>(切记：所有都是英文的，英文冒号后面必须跟着一个空格)<br>如果你更换主题：也是在该硬件_config.yml设施设置 theme:landscape （默认主题）</p>
+<p>在终端输入 cd进入你hexo的文件夹<br>hexo g<br>hexo s<br>hexo d （部署）</p>
+<p>大功告成～！！！</p>
+<p>然后终端cd到你自己的用户名.github.io 文件夹下<br>git pull（更新成最新的）</p>
+<p>五、绑定域名<br>1.购买 我在阿里云买的<br>2.在终端cd到你自己的用户名.github.io 文件夹下 创建一个关联域名的CNAME<br>创建方法：<br>touch CNAME<br>vim CNAME  (打开  i是编辑 输入你的域名  不用加wwww 退出编辑是esc然后 :wq 回车)<br>git add CNAME<br>git commit -m “add CNAME”  (-m 的意思是添加注释)</p>
+<p>然后登陆阿里云解析一下你的域名<br>在终端输入  ping <a href="https://github.com/你自己的用户名/你自己的用户名.github.io" target="_blank" rel="external">https://github.com/你自己的用户名/你自己的用户名.github.io</a><br>查一下ip地址添加解析会用到<br>添加三个解析<br>1.记录类型：A 主机记录：WWW  记录值：你的IP地址<br>2.记录类型：A 主机记录：@  记录值：你的IP地址<br>3.记录类型：CNAME 主机记录：blog  记录值：你自己的用户名.github.io</p>
+<p>六、编辑调试本地的bolg，然后不断的<br>hexo g<br>hexo s<br>hexo d （部署）</p>
+<p>git 下记得  gitpull -&gt; git push</p>
+<p>编辑中遇到的坑:<br>1.修改主题的菜单，怎么也修改不了，后来发现是在第一个_config.yml应该在主题里面的_config.yml修改</p>
+<p>menu:<br>首页: /#blog<br>简介: /about<br>分类: /categories<br>（／后面接的是你themes文件夹并列的source中地址）</p>
+<p>2.创建的菜单文章都在和themes文件夹并列的source中<br>_posts文件夹下面是文章<br>categories文件及下面是对应的菜单<br>about文件及下面是对应的菜单</p>
+<p>我的categories中打开index.md<br>title: 分类<br>date: 2017-07-14 14:03:54<br>layout: page-archive<br>是这个样子的，是希望layout一个负责分类的菜单</p>
+<p>文章中需要引用图片是把图片也是放在source中<br>文章中直接 <img src="/image.png" alt=""></p>
+
   </section>
 
   <section class="post-comments">
